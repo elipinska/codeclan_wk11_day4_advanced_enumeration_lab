@@ -16,7 +16,7 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
     return frequenciesObject;
   }
 
-  function frequenciesObjectsAreTheSame(word, object1, object2) {
+  function frequenciesObjectsAreEqual(word, object1, object2) {
 
     if (word.split('').every(letter=> object1[letter] === object2[letter])) {
       return true;
@@ -37,7 +37,7 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
       wordFrequencies = calculateLetterFrequencies(word);
       otherWordFrequencies = calculateLetterFrequencies(otherWord);
 
-      if (wordsAreNotTheSame(word, otherWord) && frequencyObjectLengthsAreEqual(wordFrequencies, otherWordFrequencies) && frequenciesObjectsAreTheSame(word, wordFrequencies, otherWordFrequencies)) {
+      if (wordsAreNotTheSame(word, otherWord) && frequencyObjectLengthsAreEqual(wordFrequencies, otherWordFrequencies) && frequenciesObjectsAreEqual(word, wordFrequencies, otherWordFrequencies)) {
         return true;
       } else {
         return false;
